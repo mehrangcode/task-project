@@ -1,0 +1,1 @@
+export const urlGeneral = "https://jsonbox.io/box_42a66ad708e6c078c755"
