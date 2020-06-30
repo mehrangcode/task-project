@@ -1,25 +1,34 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginRequest } from "../../Actions/Auth/Actions"
 const Login = () => {
+    const [userName, setUserName] = useState("")
 
-
+    const dispatch = useDispatch()
     const onOk = (e) => {
         e.preventDefault()
-        console.log("Ok")
+        dispatch(loginRequest({ userName }))
     }
 
 
-    return(
-        <div className="login">
+    return (
+        <form onSubmit={onOk} className="login">
             <h3> Login</h3>
-
-            <form onSubmit={onOk}>
+            <div>
                 <label htmlFor="userName">userName</label>
-                <input id="userName" type="text" name="userName" />
-
-                <button type="submit"> Login </button>
-            </form>
-        </div>
+                <input
+                    value={userName}
+                    id="userName"
+                    type="text"
+                    name="userName"
+                    onChange={(event) => setUserName(event.target.value)}
+                />
+            </div>
+            <div className="authFooter">
+                
+            <button type="submit" className="authBtn"> Login </button>
+            </div>
+        </form>
     )
 
 }

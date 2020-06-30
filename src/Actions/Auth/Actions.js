@@ -7,8 +7,8 @@ export const registerRequest = (data) => async (dispatch, getState) => {
         const res = await AuthApi.register(data)
         if (res.data) {
 
-            const loginData = { email: data.email, password: data.password }
-            AuthActions.loginRequest(loginData)(dispatch, getState)
+            const loginData = { userName: data.userName}
+            loginRequest(loginData)(dispatch, getState)
             dispatch({ type: AuthActionTypes.LoginSuccess })
         }
     } catch (error) {
@@ -23,9 +23,8 @@ export const loginRequest = (data) => async (dispatch, getState) => {
     dispatch({ type: AuthActionTypes.Login })
     try {
         const res = await AuthApi.login(data)
-        if (res.data) {
-
-            window.localStorage.setItem("task-userData", res.data.token);
+        if (res.data && res.data.length) {
+            window.localStorage.setItem("task-userData", JSON.stringify(res.data[0]));
             dispatch({ type: AuthActionTypes.LoginSuccess })
         }
     } catch (error) {
@@ -34,7 +33,7 @@ export const loginRequest = (data) => async (dispatch, getState) => {
         alert(error.response.data.message)
     }
 
-},
+}
 
 
 export const logOutRequest = () => (dispatch, getState) => {
