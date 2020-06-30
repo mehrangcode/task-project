@@ -1,0 +1,22 @@
+.authBlock {
+	display: flex;
+	width: 700px;
+	max-width: 95%;
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin: 25px auto;
+	min-height: 250px;
+	justify-content: space-between;
+}
+
+
+.login {
+    width: 50%;
+    border-left: 1px solid #ccc;
+    padding: 0 10px;
+}
+
+.register {
+    width: 50%;
+    padding: 0 10px;
+}

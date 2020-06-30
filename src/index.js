@@ -11,7 +11,19 @@ const initialState = {}
 const store = configureStore(initialState);
 
 
+const isAuth = () => {
+  const userData = window.localStorage.getItem("task-userData");
+  if(userData){
+      store.getState().auth.isAuth = true
+      axios.defaults.headers.common['Authorization'] = `${userData}` 
+  }
+}
 
+export const logOut = () => {
+  window.localStorage.removeItem("task-userData");
+  store.getState().auth.isAuth = false;
+}
+isAuth();
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}> <App /> </Provider>
