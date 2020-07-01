@@ -60,7 +60,7 @@ const Register = ({
                 </div>
             <div className="authFooter">
                 
-            <button type="submit" className="authBtn"> Register </button>
+            <button type="submit" className="btnGold"> Register </button>
             </div>
             </form>
     )

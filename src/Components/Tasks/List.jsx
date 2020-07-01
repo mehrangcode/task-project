@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchList } from '../../Actions/Tasks/Actions'
+import CreateTaskForm from './Create';
 
 const TaskList = (props) => {
 
@@ -11,6 +12,7 @@ const TaskList = (props) => {
     }, [])
     console.log(tasks)
     return <div className="taskList">
+        <CreateTaskForm />
         TaskList
     </div>
 }

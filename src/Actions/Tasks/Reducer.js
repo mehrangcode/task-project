@@ -2,10 +2,11 @@ import { TaksActionTypes } from "./ActionType";
 
 const unloadedState = {
     list: false,
-    loading: false
+    loading: false,
+    createModalStatus: false,
 };
 
-export const AuthReducer = (
+export const TasksReducer = (
     state = unloadedState,
     action,
 ) => {
@@ -27,6 +28,12 @@ export const AuthReducer = (
             return {
                 ...state,
                 loading: false,
+            }
+        }
+        case TaksActionTypes.CreateModalStatus: {
+            return {
+                ...state,
+                createModalStatus: action.open,
             }
         }
     }

@@ -38,7 +38,7 @@ const Login = ({
             </div>
             <div className="authFooter">
                 
-            <button type="submit" className="authBtn"> Login </button>
+            <button type="submit" className="btnGold"> Login </button>
             </div>
         </form>
     )
