@@ -18,16 +18,20 @@ const TaskList = (props) => {
         return null
     }
 
-    return <ScrollContainer hideScrollbars={false}  className="scroll-container">
-    <div className="taskList">
-        <CreateTaskForm />
+    return (
+        <React.Fragment>
+            <CreateTaskForm />
+            <ScrollContainer hideScrollbars={false} className="scroll-container">
+                <div className="taskList">
 
-        
-        {tasks.list && tasks.list.map(task => {
-            return <TaskCard key={"KEY" + task._id} task={task} />
-        })}
-    </div>
-    </ScrollContainer>
+
+                    {tasks.list && tasks.list.map(task => {
+                        return <TaskCard key={"KEY" + task._id} task={task} />
+                    })}
+                </div>
+            </ScrollContainer>
+        </React.Fragment>
+    )
 }
 
 export default TaskList
