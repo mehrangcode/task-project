@@ -1,0 +1,51 @@
+.modalContainer {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	overflow-y: auto;
+	display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+.modalBackBox {
+	background-color: #1a1a1a78;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.modal {
+	z-index: 500;
+	position: absolute;
+	background-color: white;
+	width: 600px;
+	max-width: 90%;
+	margin: 45px auto;
+	text-align: right;
+	direction: rtl;
+}
+
+.modalHeader {
+	background-color: gold;
+	padding: 0 15px;
+	display: flex;
+	justify-content: space-between;
+	height: 40px;
+	align-items: center;
+}
+
+.modalBody {
+	min-height: 150px;
+	padding: 5px 15px;
+}
+
+.ModalFooter {
+	display: flex;
+	justify-content: flex-end;
+	margin: 25px 5px;
+}
+
+.ModalFooter button {
+    margin:  0 10px;
+}
