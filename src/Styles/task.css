@@ -9,22 +9,24 @@
 }
 .taskCard {
 	width: 350px;
-	border: 1px solid #ccc;
+	border: 1px solid black;
 	flex-shrink: 0;
 	min-height: 250px;
 	margin: 10px;
 	text-align: right;
 	direction: rtl;
+	border-radius: 8px;
 }
 .actionBar {
 	background-color: #444;
-	height: 40px;
+	height: 45px;
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
 	padding: 0 20px;
 	color: white;
-	border-bottom: 4px solid gold;
+    border-bottom: 4px solid gold;
+    border-radius: 8px 8px 0 0;
 }
 .taskDescription {
 	padding: 0 15px;
@@ -32,4 +34,16 @@
 	border-bottom: 1px solid #ccc;
 	background-color: #eee;
 	font-size: 12px;
+}
+
+.addSubTaskBtn {
+	width: 30px;
+	height: 30px;
+	background-color: gold;
+	text-align: center;
+	color: #444;
+	border-radius: 30px;
+	cursor: pointer;
+	font-size: 19px;
+	border: none;
 }
