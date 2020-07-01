@@ -2,7 +2,8 @@ import { AuthActionTypes } from "./ActionType";
 
 const unloadedState = {
     isAuth: false,
-    loading: false
+    loading: false,
+    data: null
 };
 
 export const AuthReducer = (
@@ -21,6 +22,7 @@ export const AuthReducer = (
                 ...state,
                 isAuth: true,
                 loading: false,
+                data: action.data
             }
         }
         case AuthActionTypes.LoginFail: {

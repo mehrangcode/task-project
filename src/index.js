@@ -14,14 +14,15 @@ const store = configureStore(initialState);
 const isAuth = () => {
   const userData = window.localStorage.getItem("task-userData");
   if(userData){
-      store.getState().auth.isAuth = true
-      axios.defaults.headers.common['Authorization'] = `${userData}` 
+      store.getState().auth.isAuth = true;
+      store.getState().auth.data = JSON.parse(userData);
   }
 }
 
 export const logOut = () => {
   window.localStorage.removeItem("task-userData");
   store.getState().auth.isAuth = false;
+  store.getState().auth.data = null;
 }
 isAuth();
 ReactDOM.render(
