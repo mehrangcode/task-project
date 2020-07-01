@@ -3,7 +3,13 @@
  @import "panel.css";
  @import "modal.css";
  @import "task.css";
+ @import url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.css');
 
+body {
+	font-family: "Shabnam", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;;
+}
  .navbar {
 	background-color: #444;
 	color: white;

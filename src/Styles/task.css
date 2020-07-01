@@ -5,6 +5,7 @@
 	display: flex;
 	min-height: 100vh;
 	align-items: first baseline;
+	cursor: all-scroll;
 }
 .taskCard {
 	width: 350px;
