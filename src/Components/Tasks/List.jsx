@@ -10,7 +10,6 @@ const TaskList = (props) => {
     useEffect(() =>{
         dispatch(fetchList())
     }, [])
-    console.log(tasks)
     return <div className="taskList">
         <CreateTaskForm />
         TaskList

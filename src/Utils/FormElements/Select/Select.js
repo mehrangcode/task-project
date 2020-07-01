@@ -195,7 +195,6 @@ class Select extends React.Component {
             options = [];
             this.state.optionList.forEach((option, i) => {
                 const optionElement = (z) => {
-                    console.log("optionElement Z: ", z)
                     return(<div key={i} id={option[valueProp]}
                         className="selectOption"
                         onClick={() => {
@@ -212,7 +211,6 @@ class Select extends React.Component {
             let y = x;
             if (y.type === Option) {
                 const optionElement = (z) => {
-                    console.log("Z2: ", z);
 
                     return (<div key={y.props[valueProp]}
                         id={y.props[valueProp]}
@@ -228,7 +226,6 @@ class Select extends React.Component {
             }
             if (y.type === COption) {
                 const optionElement = (z) => {
-                    console.log("Z3: ", z);
 
                     return (<div key={y.props[valueProp]} id={y.props[valueProp]}
                         className={z === y.props[valueProp] ? "selectOption activeOption" : "selectOption"}

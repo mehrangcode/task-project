@@ -18,3 +18,17 @@ export const fetchList = () => async (dispatch, getState) => {
     }
 
 }
+export const createTask = (data) => async (dispatch, getState) => {
+    dispatch({ type: TaksActionTypes.FetchTaskList })
+    try {
+        const res = await TasksApi.create(data)
+        if (res.data) {
+            dispatch({ type: TaksActionTypes.FetchTaskListSuccess });
+            createModal(false)(dispatch, getState)
+            fetchList()(dispatch, getState)
+        }
+    } catch (error) {
+        dispatch({ type: TaksActionTypes.FetchTaskListFaild })
+    }
+
+}

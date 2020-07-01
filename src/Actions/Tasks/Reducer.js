@@ -2,7 +2,7 @@ import { TaksActionTypes } from "./ActionType";
 
 const unloadedState = {
     list: false,
-    loading: false,
+    loading: "",
     createModalStatus: false,
 };
 
@@ -14,26 +14,44 @@ export const TasksReducer = (
         case TaksActionTypes.FetchTaskList: {
             return {
                 ...state,
-                loading: true,
+                loading: "fetchTask",
             }
         }
         case TaksActionTypes.FetchTaskListSuccess: {
             return {
                 ...state,
-                loading: false,
+                loading: "",
                 list: action.list
             }
         }
         case TaksActionTypes.FetchTaskListFail: {
             return {
                 ...state,
-                loading: false,
+                loading: "",
             }
         }
         case TaksActionTypes.CreateModalStatus: {
             return {
                 ...state,
                 createModalStatus: action.open,
+            }
+        }
+        case TaksActionTypes.CreateTask: {
+            return {
+                ...state,
+                loading: "createTask"
+            }
+        }
+        case TaksActionTypes.CreateTaskSuccess: {
+            return {
+                ...state,
+                loading: ""
+            }
+        }
+        case TaksActionTypes.CreateTaskFaild: {
+            return {
+                ...state,
+                loading: ""
             }
         }
     }
