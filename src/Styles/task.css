@@ -29,7 +29,7 @@
     border-radius: 8px 8px 0 0;
 }
 .taskDescription {
-	padding: 0 15px;
+	padding: 5px 15px;
 	min-height: 80px;
 	border-bottom: 1px solid #ccc;
 	background-color: #eee;
@@ -46,4 +46,29 @@
 	cursor: pointer;
 	font-size: 19px;
 	border: none;
+}
+
+
+.nosubTask {
+	text-align: center;
+	color: grey;
+	height: 60px;
+	padding-top: 30px;
+}
+
+.subtask {
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+
+.subTaskactionBar {
+	font-size: 11px;
+	background-color: #ccc;
+	padding: 10px 5px;
+	border-bottom: 4px solid gold;
+}
+.subTaskContent {
+	padding: 10px;
+	font-size: 13px;
 }
