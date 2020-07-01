@@ -31,3 +31,17 @@ export const addSubTask = (newSubtask) => async (dispatch, getState) => {
     }
 
 }
+
+export const changeSubTaskStatus = (data) => async (dispatch, getState) => {
+    dispatch({ type: SubTaksActionTypes.ChangeSubTaskStatus })
+    try {
+        const res = await SubTasksApi.changeSubTaskStatus(data)
+        if (res.data) {
+            dispatch({ type: SubTaksActionTypes.ChangeSubTaskStatusSuccess });
+            fetchList()(dispatch, getState)
+        }
+    } catch (error) {
+        dispatch({ type: SubTaksActionTypes.ChangeSubTaskStatusFaild })
+    }
+
+}

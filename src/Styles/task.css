@@ -54,13 +54,13 @@
 }
 
 .subtask {
-	margin: 10px 0;
+	margin: 10px auto;
 	border: 1px solid #ccc;
 	padding-bottom: 10px;
+	width: 90%;
 }
 
 .subTaskactionBar {
-	font-size: 11px;
 	background-color: #ccc;
 	padding: 10px 5px;
 	border-bottom: 4px solid gold;
@@ -75,6 +75,7 @@
 	display: flex;
 	align-items: center;
 	width: max-content;
+	font-size: 12px;
 }
 .status:hover .stausHandler {
 	max-height: 350px;

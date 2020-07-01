@@ -4,15 +4,22 @@ import SubTaskCard from '../SubTask/Card';
 import { useDispatch } from 'react-redux';
 import { addSubTaskModal } from '../../Actions/SubTasks/Actions'
 import { changeTaskStatus } from '../../Actions/Tasks/Actions'
+import { changeSubTaskStatus } from '../../Actions/SubTasks/Actions'
 import StatusBox from '../../Utils/StatusBox';
 const TaskCard = ({ task }) => {
 
     const dispatch = useDispatch()
 
-    const statusChangeHandler = (status) => {
+    const taskstatusChangeHandler = (status) => {
         const updatedTask = JSON.parse(JSON.stringify(task))
         updatedTask.status = status;
         dispatch(changeTaskStatus(updatedTask))
+    }
+
+    const subTaskstatusChangeHandler = (status, index) => {
+        const updatedTask = JSON.parse(JSON.stringify(task));
+        updatedTask.subtasks[index].status = status;
+        dispatch(changeSubTaskStatus(updatedTask))
     }
     
     return (
@@ -22,7 +29,7 @@ const TaskCard = ({ task }) => {
                onClick={() => dispatch(addSubTaskModal(true, task))}
                className="addSubTaskBtn"> + </button> </Access>
                 <StatusBox 
-                statusChange={(value) => statusChangeHandler(value)}
+                statusChange={(value) => taskstatusChangeHandler(value)}
                 currentStatus={task.status} 
                 accessRole="admin" />
             </div>
@@ -31,9 +38,11 @@ const TaskCard = ({ task }) => {
             
             </div>
             <div className="subtaskList">
-            {task.subtasks ? task.subtasks.map(item => {
+            {task.subtasks ? task.subtasks.map((item, i) => {
                 return (
-                    <SubTaskCard subtask={item} />
+                    <SubTaskCard subtask={item} changeStatus={(value) => {
+                        subTaskstatusChangeHandler(value, i)
+                    }} />
                 )
             }): (
                 <div className="nosubTask">

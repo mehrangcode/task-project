@@ -36,6 +36,24 @@ export const SubTasksReducer = (
                 loading: ""
             }
         }
+        case SubTaksActionTypes.ChangeSubTaskStatus: {
+            return {
+                ...state,
+                loading: "changeSubTaskStatus"
+            }
+        }
+        case SubTaksActionTypes.ChangeSubTaskStatusSuccess: {
+            return {
+                ...state,
+                loading: ""
+            }
+        }
+        case SubTaksActionTypes.ChangeSubTaskStatusFaild: {
+            return {
+                ...state,
+                loading: ""
+            }
+        }
     }
     return state;
 };

@@ -5,4 +5,8 @@ export const SubTaksActionTypes = {
     AddSubTask: "SubTasks/AddSubTask",
     AddSubTaskSuccess: "SubTasks/AddSubTaskSuccess",
     AddSubTaskFaild: "SubTasks/AddSubTaskFaild",
+
+    ChangeSubTaskStatus: "SubTask/ChangeSubTaskStatus",
+    ChangeSubTaskStatusSuccess: "SubTask/ChangeSubTaskStatusSuccess",
+    ChangeSubTaskStatusFaild: "SubTask/ChangeSubTaskStatusFaild",
 }
