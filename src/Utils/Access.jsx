@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 const Access = ({role, children}) => {
 
     const currentUser = useSelector(state => state.auth)
-    console.log("user: ", currentUser)
     if(!currentUser.data){
         return null
     }

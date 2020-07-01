@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Modal = ({
     visible,
@@ -8,13 +8,32 @@ const Modal = ({
     children
 }) => {
 
-    if(!visible) {
+    const [isOpen, openStatus] = useState(false)
+    const [showModal, setShowModal] = useState(false)
+    useEffect(() => {
+
+        if(visible){
+            setShowModal(true)
+            setTimeout(() => {
+                openStatus(true)
+            }, 100);
+        }
+
+        if(!visible){
+            openStatus(false)
+            setTimeout(() => {
+                setShowModal(false)
+            }, 250);
+        }
+    }, [visible])
+    console.log("Modal: ", visible, isOpen)
+    if(!showModal) {
         return null
     }
     return (
         <div className="modalContainer">
             <div className="modalBackBox" onClick={onCancel}></div>
-            <div className="modal">
+            <div className={isOpen ?"modal modalOpen" :"modal"}>
             <div className="modalHeader">
                 <div className="Modaltitle"> {title} </div>
                 <div className="closeIcon" onClick={onCancel}>X</div>
@@ -24,7 +43,7 @@ const Modal = ({
             </div>
             <div className="ModalFooter">
             <button className="btnGold" onClick={onOk}>ثبت</button>
-            <button className="btnGold" onClick={onCancel}>بستن</button>
+            <button className="btnCancel" onClick={onCancel}>بستن</button>
             </div>
         </div>
         </div>

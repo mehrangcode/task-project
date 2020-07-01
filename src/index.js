@@ -5,7 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import configureStore from "./store/ConfigureStore";
 import { Provider } from "react-redux";
-import axios from "./AxiosConfig"
 
 const initialState = {}
 const store = configureStore(initialState);
