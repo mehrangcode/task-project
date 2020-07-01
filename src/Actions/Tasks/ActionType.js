@@ -8,4 +8,8 @@ export const TaksActionTypes = {
     CreateTask: "Tasks/CreateTask",
     CreateTaskSuccess: "Tasks/CreateTaskSuccess",
     CreateTaskFaild: "Tasks/CreateTaskFaild",
+
+    ChangeTaskStatus: "Tasks/ChangeTaskStatus",
+    ChangeTaskStatusSuccess: "Tasks/ChangeTaskStatusSuccess",
+    ChangeTaskStatusFaild: "Tasks/ChangeTaskStatusFaild",
 }

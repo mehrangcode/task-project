@@ -54,6 +54,24 @@ export const TasksReducer = (
                 loading: ""
             }
         }
+        case TaksActionTypes.ChangeTaskStatus: {
+            return {
+                ...state,
+                loading: "changeTaskStatus"
+            }
+        }
+        case TaksActionTypes.ChangeTaskStatusSuccess: {
+            return {
+                ...state,
+                loading: ""
+            }
+        }
+        case TaksActionTypes.ChangeTaskStatusFaild: {
+            return {
+                ...state,
+                loading: ""
+            }
+        }
     }
     return state;
 };

@@ -8,4 +8,7 @@ export const TasksApi = {
     create : async (data) => {
         return axios.post(urlGeneral+ "/tasks", data)
     },
+    changeTaskStatus : async (task) => {
+        return axios.put(urlGeneral+ "/tasks/" + task._id, task)
+    },
 }

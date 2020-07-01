@@ -30,3 +30,7 @@
     cursor: pointer;
     transition: all 250ms;
 }
+.icon {
+	height: 15px;
+	margin-left: 5px;
+}

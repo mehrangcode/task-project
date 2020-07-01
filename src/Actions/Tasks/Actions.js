@@ -32,3 +32,17 @@ export const createTask = (data) => async (dispatch, getState) => {
     }
 
 }
+
+export const changeTaskStatus = (data) => async (dispatch, getState) => {
+    dispatch({ type: TaksActionTypes.ChangeTaskStatus })
+    try {
+        const res = await TasksApi.changeTaskStatus(data)
+        if (res.data) {
+            dispatch({ type: TaksActionTypes.ChangeTaskStatusSuccess });
+            fetchList()(dispatch, getState)
+        }
+    } catch (error) {
+        dispatch({ type: TaksActionTypes.ChangeTaskStatusFaild })
+    }
+
+}
