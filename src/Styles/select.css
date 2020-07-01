@@ -14,17 +14,16 @@
     width: 19px;
 }
 .selectInput {
-    width: 19px  !important;
-    border: none  !important;
-    margin: 0 5px  !important;
+    width: 19px;
+    border: none;
+    margin: 0 5px;
 }
 .selectInput:focus {
-	box-shadow: none !important;
+	box-shadow: non;
 	border: none;
 }
 .selectBtn {
     width: 25px;
-    border-left: 1px solid gold;
     cursor: pointer;
     font-size: 10px;
     text-align: center;
@@ -51,11 +50,10 @@
 .selectOption:focus,
 .selectOption:hover {
     background-color: gold;
-    color: white;
+    color: #444;
 }
 .selectDisplay {
     width: 100%;
-    text-align: left;
     min-height: 20px;
 }
 .optionHide {

@@ -171,6 +171,9 @@ class Select extends React.Component {
     moveFocus = () => {
         const displayProp = this.props.displayProp ? this.props.displayProp : "title";
         const node = this.ref.current;
+        if(!node){
+            return
+        }
         node.addEventListener('keydown', (e) => {
             const matchData = this.state.searchValue.toLocaleLowerCase().trim()
             const items = this.state.optionList ?
@@ -261,7 +264,7 @@ class Select extends React.Component {
             <div className="selecContainer" ref={this.optionRef}>
                 <div className="displayContainer" onClick={() => this.optionHandler(true)}>
                     <div className="inputContainer">
-                        <input
+                        { this.props.canSearch && <input
                             id={this.props.id}
                             tabIndex={1}
                             className="selectInput" ref={this.ref} onKeyDown={this._handleKeyDown}
@@ -272,7 +275,7 @@ class Select extends React.Component {
                             }}
                             type="text" 
                             onChange={(event) => this.onChangeHandler(event)} 
-                            value={this.state.searchValue} />
+                            value={this.state.searchValue} />}
                     </div>
                     <div className="selectDisplay">
                         {this.state.displayValue}
