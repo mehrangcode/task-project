@@ -15,7 +15,8 @@ const TaskList = (props) => {
         return null
     }
     return <div className="taskList">
-        <CreateTaskForm />
+    <CreateTaskForm />
+        
         {tasks.list && tasks.list.map(task => {
            return <TaskCard key={"KEY"+ task._id} task={task} />
         })}

@@ -25,7 +25,7 @@ export const loginRequest = (data) => async (dispatch, getState) => {
         const res = await AuthApi.login(data)
         if (res.data && res.data.length) {
             window.localStorage.setItem("task-userData", JSON.stringify(res.data[0]));
-            dispatch({ type: AuthActionTypes.LoginSuccess, data: res.data})
+            dispatch({ type: AuthActionTypes.LoginSuccess, data: res.data[0]})
         }
     } catch (error) {
 

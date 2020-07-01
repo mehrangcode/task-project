@@ -4,4 +4,15 @@
  @import "modal.css";
  @import "task.css";
 
- 
+ .navbar {
+	background-color: #444;
+	color: white;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+}
+.navbar h1 {
+	font-size: 20px;
+}
