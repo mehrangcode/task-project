@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchList } from '../../Actions/Tasks/Actions'
 import CreateTaskForm from './Create';
+import TaskCard from './Card';
 
 const TaskList = (props) => {
 
@@ -12,7 +13,9 @@ const TaskList = (props) => {
     }, [])
     return <div className="taskList">
         <CreateTaskForm />
-        TaskList
+        {tasks.list.map(task => {
+           return <TaskCard key={"KEY"+ task._id} task={task} />
+        })}
     </div>
 }
 

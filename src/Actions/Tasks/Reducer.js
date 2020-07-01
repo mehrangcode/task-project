@@ -1,7 +1,7 @@
 import { TaksActionTypes } from "./ActionType";
 
 const unloadedState = {
-    list: false,
+    list: [],
     loading: "",
     createModalStatus: false,
 };

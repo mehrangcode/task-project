@@ -1,3 +1,35 @@
 .DescriptionBox {
     width: 100%;
 }
+.taskList {
+	display: flex;
+	overflow-x: auto;
+	min-height: 100vh;
+	align-items: first baseline;
+}
+.taskCard {
+	width: 350px;
+	border: 1px solid #ccc;
+	flex-shrink: 0;
+	min-height: 250px;
+	margin: 10px;
+	text-align: right;
+	direction: rtl;
+}
+.actionBar {
+	background-color: #444;
+	height: 40px;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+	color: white;
+	border-bottom: 4px solid gold;
+}
+.taskDescription {
+	padding: 0 15px;
+	min-height: 80px;
+	border-bottom: 1px solid #ccc;
+	background-color: #eee;
+	font-size: 12px;
+}
