@@ -1,21 +1,20 @@
-.authBlock {
-	display: flex;
-	width: 700px;
+.auth {
+	width: 450px;
 	max-width: 95%;
+	margin: 35px auto;
 	border: 1px solid #ccc;
-	padding: 5px;
-	margin: 25px auto;
 	min-height: 250px;
-	justify-content: space-between;
+	text-align: right;
+	direction: rtl;
 }
 
+	
 label {
 	display: block;
 	margin: 5px;
 }
 
 .login {
-    width: 50%;
     border-left: 1px solid #ccc;
     padding: 0 10px;
 }
@@ -24,7 +23,6 @@ label {
 	display: block;
 }
 .register {
-    width: 50%;
     padding: 0 10px;
 }
 
@@ -37,7 +35,8 @@ label {
 
 .authFooter {
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: column;
+	margin: 25px auto;
 }
 
 .logout {

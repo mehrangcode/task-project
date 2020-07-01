@@ -61,7 +61,8 @@
 }
 
 .subTaskactionBar {
-	background-color: #ccc;
+	background-color: #888;
+	color: white;
 	padding: 10px 5px;
 	border-bottom: 4px solid gold;
 }
@@ -79,12 +80,13 @@
 }
 .status:hover .stausHandler {
 	max-height: 350px;
+	border: 1px solid #ccc;
 }
 .stausHandler {
 	position: absolute;
 	background-color: white;
 	width: 120px;
-	left: 0;
+	left: -50%;
 	top: 100%;
 	padding: 0 5px;
 	text-align: center;
@@ -92,6 +94,7 @@
 	overflow-y: hidden;
 	transition: all 250ms;
 	z-index: 3;
+	border: none;
 }
 
 

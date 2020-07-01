@@ -7,6 +7,7 @@ import Select from '../../Utils/FormElements/Select/Select'
 const Register = ({
     getFormItem,
     onFormSubmit,
+    switchPanel
 }) => {
 
     const dispatch = useDispatch()
@@ -23,9 +24,9 @@ const Register = ({
 
     return (
         <form onSubmit={onOk} className="register">
-            <h3> Register</h3>
+            <h3> ثبت نام</h3>
             <div>
-                <label htmlFor="userName">userName</label>
+                <label htmlFor="userName">نام کاربری</label>
                 {getFormItem({
                     name: "userName",
                     rules: [
@@ -39,7 +40,7 @@ const Register = ({
                     id="userName"
                     type="text"
                 />)}
-                <label htmlFor="role">Role: </label>
+                <label htmlFor="role">نقش </label>
                 {getFormItem({
                     name: "role",
                     initialvalue: "employee",
@@ -53,15 +54,18 @@ const Register = ({
                     <Select
                         optionList={
                             [
-                                { id: "admin", title: "Admin" },
-                                { id: "employee", title: "Employee" },
+                                { id: "admin", title: "مدیر" },
+                                { id: "employee", title: "کارمند" },
                             ]
                         }
                     />)}
             </div>
             <div className="authFooter">
 
-                <button type="submit" className="btnGold"> Register </button>
+                <button type="submit" className="btnGold"> ثبت نام </button>
+                <button
+                onClick={switchPanel}
+                 type="button" className="btnLink">پنل ورود</button>
             </div>
         </form>
     )

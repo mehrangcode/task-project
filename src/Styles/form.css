@@ -1,6 +1,6 @@
 .txtInput {
 	width: 100%;
-	min-height: 23px;
+	min-height: 30px;
 	padding: 0 5px;
 	box-sizing: border-box;
 }
@@ -29,6 +29,14 @@
 	width: 60px;
     cursor: pointer;
     transition: all 250ms;
+}
+.btnLink {
+	background-color: white;
+	color: lightcoral;
+	border-radius: 5px;
+	cursor: pointer;
+	border: none;
+	margin: 10px auto;
 }
 .icon {
 	height: 15px;

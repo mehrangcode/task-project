@@ -5,6 +5,7 @@ import { FormCreator } from "../../Utils/FormController";
 const Login = ({
     getFormItem,
     onFormSubmit,
+    switchPanel
 }) => {
 
     const dispatch = useDispatch()
@@ -19,9 +20,9 @@ const Login = ({
 
     return (
         <form onSubmit={onOk} className="login">
-            <h3> Login</h3>
+            <h3> ورود</h3>
             <div>
-                <label htmlFor="userName">userName</label>
+                <label htmlFor="userName">نام کاربری</label>
                 {getFormItem({
                     name:"userName",
                     rules: [
@@ -39,7 +40,11 @@ const Login = ({
             </div>
             <div className="authFooter">
                 
-            <button type="submit" className="btnGold"> Login </button>
+            <button type="submit" className="btnGold"> ورود </button>
+                <button 
+                onClick={switchPanel}
+                type="button" 
+                className="btnLink">پنل ثبت نام </button>
             </div>
         </form>
     )
