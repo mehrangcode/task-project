@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchList } from '../../Actions/Tasks/Actions'
 import CreateTaskForm from './Create';
+import AddSubTaskForm from '../SubTask/Create';
 import TaskCard from './Card';
 
 import ScrollContainer from 'react-indiana-drag-scroll'
@@ -17,10 +18,10 @@ const TaskList = (props) => {
     if (!tasks) {
         return null
     }
-
     return (
         <React.Fragment>
             <CreateTaskForm />
+            <AddSubTaskForm />
             <ScrollContainer hideScrollbars={false} className="scroll-container">
                 <div className="taskList">
 
