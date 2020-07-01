@@ -3,6 +3,7 @@ import './Styles/main.css';
 import { useSelector } from 'react-redux';
 import Register from './Components/Auth/Register';
 import Login from './Components/Auth/Login';
+import Panel from './Components/Panel/Panel';
 
 function App() {
 
@@ -10,7 +11,9 @@ function App() {
   return (
     <div className="App">
       
-      {auth.isAuth ? "User Is Auth" : (
+      {auth.isAuth ? (
+        <Panel />
+      ) : (
         <div className="authBlock">
           <Register />
           <Login />
