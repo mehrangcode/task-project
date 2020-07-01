@@ -3,6 +3,7 @@ import Modal from '../Modals/Modal';
 import { useSelector, useDispatch } from "react-redux";
 import { createModal, createTask } from "../../Actions/Tasks/Actions";
 import { FormCreator } from "../../Utils/FormController";
+import Select from '../../Utils/FormElements/Select/Select';
 const CreateTaskForm = ({
     getFormItem,
     onFormSubmit,
@@ -24,7 +25,7 @@ const CreateTaskForm = ({
         title="ثبت تسک جدید"
         >
             <form onSubmit={onOk}>
-                <label htmlFor="description"> Description</label>
+                <label htmlFor="description"> توضیحات</label>
                 {getFormItem({
                     name: "description",
                     rules: [
@@ -34,6 +35,19 @@ const CreateTaskForm = ({
                         }
                     ]
                 }, <textarea className="DescriptionBox" />)}
+                <label htmlFor="status">وضعیت</label>
+                {getFormItem({ 
+                    initialvalue: "تعریف شده",
+                    name: "status"
+                }, 
+                    <Select 
+                        optionList={[
+                            {id: "تعریف شده", title: "تعریف شده"},
+                            {id: "در حال انجام", title: "در حال انجام"},
+                            {id: "انجام شد", title: "انجام شد"},
+                        ]}
+                    />
+                )}
             </form>
         </Modal>
         
