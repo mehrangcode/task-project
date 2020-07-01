@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { loginRequest } from "../../Actions/Auth/Actions"
-const Login = () => {
-    const [userName, setUserName] = useState("")
+import { loginRequest } from "../../Actions/Auth/Actions";
+import { FormCreator } from "../../Utils/FormController";
+const Login = ({
+    getFormItem,
+    onFormSubmit,
+}) => {
 
     const dispatch = useDispatch()
     const onOk = (e) => {
-        e.preventDefault()
-        dispatch(loginRequest({ userName }))
+        e.preventDefault();
+        const values = onFormSubmit();
+        if(!values.err){
+            dispatch(loginRequest(values.data ))
+        }
     }
 
 
@@ -16,13 +22,19 @@ const Login = () => {
             <h3> Login</h3>
             <div>
                 <label htmlFor="userName">userName</label>
-                <input
-                    value={userName}
+                {getFormItem({
+                    name:"userName",
+                    rules: [
+                        {
+                            required: true,
+                            msg: "نام کاربری را وارد نمایید"
+                        }
+                    ]
+                },
+                    <input
                     id="userName"
                     type="text"
-                    name="userName"
-                    onChange={(event) => setUserName(event.target.value)}
-                />
+                />)}
             </div>
             <div className="authFooter">
                 
@@ -33,4 +45,4 @@ const Login = () => {
 
 }
 
-export default Login
+export default FormCreator(Login)

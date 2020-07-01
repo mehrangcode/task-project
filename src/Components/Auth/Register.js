@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerRequest } from "../../Actions/Auth/Actions";
+import { FormCreator } from "../../Utils/FormController";
+import Select from '../../Utils/FormElements/Select/Select'
 
-const Register = () => {
-
-    const [userName, setUserName] = useState("")
-    const [role, setRole] = useState("admin")
+const Register = ({
+    getFormItem,
+    onFormSubmit,
+}) => {
+    
     const dispatch = useDispatch()
     const onOk = (e) => {
         e.preventDefault()
-        dispatch(registerRequest({
-            userName,
-            role
-        }))
+        const values = onFormSubmit();
+        if(!values.err){
+            dispatch(registerRequest(values.data))
+        }
+        
 
     }
 
@@ -22,19 +26,37 @@ const Register = () => {
                 <h3> Register</h3>
                 <div>
                     <label htmlFor="userName">userName</label>
-                    <input
+                    {getFormItem({
+                        name: "userName",
+                        rules: [
+                            {
+                                required: true,
+                                msg: "نام کاربری را تعیین نمایید"
+                            }
+                        ]
+                    }, <input
                         id="userName"
                         type="text"
-                        name="userName"
-                        onChange={(event) => setUserName(event.target.value)}
-                    />
+                    />)}
                     <label htmlFor="role">Role: </label>
-                    <select id="role"
-                        value={role}
-                        onChange={(event) => setRole(event.target.value)}>
-                        <option key="admin"> Admin </option>
-                        <option key="employee"> Employee </option>
-                    </select>
+                    {getFormItem({
+                        name: "role",
+                        initialvalue: "employee",
+                        rules: [
+                            {
+                                required: true,
+                                msg: "نقش را تعیین نمایید"
+                            }
+                        ]
+                    }, 
+                    <Select
+                    optionList={
+                        [
+                            {id: "admin", title: "Admin"},
+                            {id: "employee", title: "Employee"},
+                        ]
+                    }
+                    />)}
                 </div>
             <div className="authFooter">
                 
@@ -45,4 +67,4 @@ const Register = () => {
 
 }
 
-export default Register
+export default FormCreator(Register)

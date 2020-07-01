@@ -19,7 +19,10 @@ label {
     border-left: 1px solid #ccc;
     padding: 0 10px;
 }
-
+.validationError {
+	color: red;
+	display: block;
+}
 .register {
     width: 50%;
     padding: 0 10px;
