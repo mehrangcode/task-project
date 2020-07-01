@@ -28,15 +28,6 @@ label {
     padding: 0 10px;
 }
 
-.btnGold {
-	display: block;
-	width: 120px;
-	height: 35px;
-	background-color: gold;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
 
 .login, .register {
 	display: flex;

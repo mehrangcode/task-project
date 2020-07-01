@@ -34,7 +34,7 @@ const CreateTaskForm = ({
                             msg: "توضیحات تسک میبایست تعیین شود"
                         }
                     ]
-                }, <textarea id="description" className="DescriptionBox" />)}
+                }, <textarea id="description" className="txtInput" />)}
                 <label htmlFor="status">وضعیت</label>
                 {getFormItem({ 
                     initialvalue: "تعریف شده",

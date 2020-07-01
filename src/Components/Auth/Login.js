@@ -32,6 +32,7 @@ const Login = ({
                     ]
                 },
                     <input
+                    className="txtInput"
                     id="userName"
                     type="text"
                 />)}

@@ -1,0 +1,32 @@
+.txtInput {
+	width: 100%;
+	min-height: 23px;
+	padding: 0 5px;
+	box-sizing: border-box;
+}
+
+.txtInput:focus {
+	border: 1px solid gold;
+	box-shadow: 0px 0px 3px gold;
+}
+.btnGold {
+	display: block;
+	width: 120px;
+	height: 35px;
+	background-color: gold;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.btnCancel:hover {
+    background-color: gold;
+}
+.btnCancel {
+	background-color: white;
+	border: 2px solid gold;
+	border-radius: 5px;
+	width: 60px;
+    cursor: pointer;
+    transition: all 250ms;
+}

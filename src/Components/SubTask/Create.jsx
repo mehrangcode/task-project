@@ -17,8 +17,6 @@ const AddSubTaskForm = ({
            dispatch(addSubTask(values.data))
         }
     }
-
-    console.log("subtask", subtask)
     return (
         <Modal
         visible= {subtask.addSubTaskModal}
@@ -36,7 +34,7 @@ const AddSubTaskForm = ({
                             msg: "شرح حال الزامی است"
                         }
                     ]
-                }, <textarea id="description" className="DescriptionBox" />)}
+                }, <textarea id="description" className="txtInput" />)}
                 <label htmlFor="status">وضعیت</label>
                 {getFormItem({ 
                     initialvalue: "تعریف شده",
