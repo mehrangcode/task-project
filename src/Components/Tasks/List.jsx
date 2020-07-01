@@ -4,23 +4,30 @@ import { fetchList } from '../../Actions/Tasks/Actions'
 import CreateTaskForm from './Create';
 import TaskCard from './Card';
 
+import ScrollContainer from 'react-indiana-drag-scroll'
 const TaskList = (props) => {
-
     const tasks = useSelector(state => state.tasks)
     const dispatch = useDispatch()
-    useEffect(() =>{
+    useEffect(() => {
         dispatch(fetchList())
     }, [])
-    if(!tasks){
+
+
+
+    if (!tasks) {
         return null
     }
-    return <div className="taskList">
-    <CreateTaskForm />
+
+    return <ScrollContainer hideScrollbars={false}  className="scroll-container">
+    <div className="taskList">
+        <CreateTaskForm />
+
         
         {tasks.list && tasks.list.map(task => {
-           return <TaskCard key={"KEY"+ task._id} task={task} />
+            return <TaskCard key={"KEY" + task._id} task={task} />
         })}
     </div>
+    </ScrollContainer>
 }
 
 export default TaskList
