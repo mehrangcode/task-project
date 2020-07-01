@@ -11,9 +11,12 @@ const TaskList = (props) => {
     useEffect(() =>{
         dispatch(fetchList())
     }, [])
+    if(!tasks){
+        return null
+    }
     return <div className="taskList">
         <CreateTaskForm />
-        {tasks.list.map(task => {
+        {tasks.list && tasks.list.map(task => {
            return <TaskCard key={"KEY"+ task._id} task={task} />
         })}
     </div>
