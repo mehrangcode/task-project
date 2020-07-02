@@ -138,6 +138,7 @@ const FromItemWrapper = (props) => {
     React.useEffect(() => {
             props.initialValues(props.name, props.rules)
         
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <div className="itemWrapper">

@@ -54,6 +54,7 @@ export const SubTasksReducer = (
                 loading: ""
             }
         }
+        default:
+            return state
     }
-    return state;
 };

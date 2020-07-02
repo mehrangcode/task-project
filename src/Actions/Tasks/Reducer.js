@@ -76,6 +76,7 @@ export const TasksReducer = (
                 targetTask: null
             }
         }
+        default:
+            return state
     }
-    return state;
 };

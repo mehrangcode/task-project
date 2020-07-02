@@ -1,6 +1,5 @@
 import React from 'react';
 import StatusBox from '../../Utils/StatusBox';
-import Spinner from '../../Utils/Spinner';
 
 const SubTaskCard = ({subtask, changeStatus, loading}) => {
 

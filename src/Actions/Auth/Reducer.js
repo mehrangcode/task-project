@@ -38,6 +38,7 @@ export const AuthReducer = (
                 isAuth: false,
             }
         }
+        default:
+            return state
     }
-    return state;
 };
