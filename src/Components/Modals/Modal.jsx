@@ -56,7 +56,7 @@ const Modal = ({
 }
 
 Modal.defaultProps = {
-    loading: true
+    loading: false
 }
 
 export default Modal
