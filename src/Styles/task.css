@@ -54,6 +54,7 @@
 }
 
 .subtask {
+	position: relative;
 	margin: 10px auto;
 	border: 1px solid #ccc;
 	padding-bottom: 10px;

@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Access from '../../Utils/Access';
 import SubTaskCard from '../SubTask/Card';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addSubTaskModal } from '../../Actions/SubTasks/Actions'
 import { changeTaskStatus } from '../../Actions/Tasks/Actions'
 import { changeSubTaskStatus } from '../../Actions/SubTasks/Actions'
 import StatusBox from '../../Utils/StatusBox';
 const TaskCard = ({ task }) => {
 
+    const [targetSubTask, setTargetSubTask] = useState()
+    const subtaskLoading = useSelector(state => state.subtask.loading)
     const dispatch = useDispatch()
-
     const taskstatusChangeHandler = (status) => {
         const updatedTask = JSON.parse(JSON.stringify(task))
         updatedTask.status = status;
         dispatch(changeTaskStatus(updatedTask))
     }
-
+    
     const subTaskstatusChangeHandler = (status, index) => {
         const updatedTask = JSON.parse(JSON.stringify(task));
         updatedTask.subtasks[index].status = status;
+        setTargetSubTask(index)
         dispatch(changeSubTaskStatus(updatedTask))
     }
     
@@ -40,7 +42,9 @@ const TaskCard = ({ task }) => {
             <div className="subtaskList">
             {task.subtasks ? task.subtasks.map((item, i) => {
                 return (
-                    <SubTaskCard subtask={item} changeStatus={(value) => {
+                    <SubTaskCard subtask={item} 
+                    loading={i === targetSubTask && subtaskLoading === "changeSubTaskStatus"} 
+                    changeStatus={(value) => {
                         subTaskstatusChangeHandler(value, i)
                     }} />
                 )
