@@ -7,6 +7,6 @@ export const AuthApi = {
     },
 
     register : async (data) => {
-        return axios.post(urlGeneral+ "/users/register")
+        return axios.post(urlGeneral+ "/users/register", data)
     }
 }
