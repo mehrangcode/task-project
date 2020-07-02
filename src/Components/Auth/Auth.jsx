@@ -4,7 +4,7 @@ import Login from './Login';
 
 const AuthPanel = () => {
 
-    const [panelName, setPanelName] = useState("register")
+    const [panelName, setPanelName] = useState("login")
     return(
         <div className="auth">
             {panelName === "register" ? (

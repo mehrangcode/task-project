@@ -1,5 +1,6 @@
 import { TaksActionTypes } from "./ActionType";
 import { TasksApi } from "./api";
+import { EModal } from "../../Components/Modals/ErrorModal";
 
 
 export const createModal= (open) => (dispatch, getState) => {
@@ -12,9 +13,13 @@ export const fetchList = () => async (dispatch, getState) => {
         const res = await TasksApi.fetchList()
         if (res.data) {
             dispatch({ type: TaksActionTypes.FetchTaskListSuccess, list: res.data })
+        }else {
+            EModal(res)
+            dispatch({ type: TaksActionTypes.FetchTaskListFaild })
         }
     } catch (error) {
         dispatch({ type: TaksActionTypes.FetchTaskListFaild })
+        EModal(error)
     }
 
 }
@@ -26,9 +31,13 @@ export const createTask = (data) => async (dispatch, getState) => {
             dispatch({ type: TaksActionTypes.CreateTaskSuccess });
             createModal(false)(dispatch, getState)
             fetchList()(dispatch, getState)
+        }else {
+            EModal(res)
+            dispatch({ type: TaksActionTypes.CreateTaskFaild })
         }
     } catch (error) {
         dispatch({ type: TaksActionTypes.CreateTaskFaild })
+        EModal(error)
     }
 
 }
@@ -40,9 +49,13 @@ export const changeTaskStatus = (data) => async (dispatch, getState) => {
         if (res.data) {
             dispatch({ type: TaksActionTypes.ChangeTaskStatusSuccess });
             fetchList()(dispatch, getState)
+        }else {
+            EModal(res)
+            dispatch({ type: TaksActionTypes.ChangeTaskStatusFaild })
         }
     } catch (error) {
         dispatch({ type: TaksActionTypes.ChangeTaskStatusFaild })
+        EModal(error)
     }
 
 }
