@@ -31,14 +31,14 @@ const TaskList = (props) => {
 
                     {tasks.list && tasks.list.length > 0 ? tasks.list.map(task => {
                         return <TaskCard key={"KEY" + task._id} task={task} />
-                    }) : (
+                    }) : tasks.loading === "" ?  (
                         <div className="noTask">
                             هنوز تسک تعریف نشده است
                            <Access role="admin">
                            <p> <button className="btnGold" onClick={() => dispatch(createModal(true))}> ثبت تسک جدید </button> </p>
                            </Access>
                         </div>
-                    )}
+                    ): null}
                 </div>
             </ScrollContainer>
         </React.Fragment>
