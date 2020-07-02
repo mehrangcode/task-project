@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import Spinner from '../../Utils/Spinner';
 
 const Modal = ({
     visible,
     title,
     onOk,
     onCancel,
-    children
+    children,
+    loading
 }) => {
 
     const [isOpen, openStatus] = useState(false)
@@ -26,7 +28,6 @@ const Modal = ({
             }, 250);
         }
     }, [visible])
-    console.log("Modal: ", visible, isOpen)
     if(!showModal) {
         return null
     }
@@ -42,12 +43,18 @@ const Modal = ({
                 {children}
             </div>
             <div className="ModalFooter">
-            <button className="btnGold" onClick={onOk}>ثبت</button>
+            <button className="btnGold" onClick={onOk}>
+                <Spinner icon={true} text= "ثبت"  loading={loading} />
+            </button>
             <button className="btnCancel" onClick={onCancel}>بستن</button>
             </div>
         </div>
         </div>
     )
+}
+
+Modal.defaultProps = {
+    loading: true
 }
 
 export default Modal

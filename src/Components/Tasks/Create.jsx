@@ -21,6 +21,7 @@ const CreateTaskForm = ({
         <Modal
         visible= {tasks.createModalStatus}
         onCancel={()=> dispatch(createModal(false))}
+        loading={tasks.loading === "createTask"}
         onOk={onOk}
         title="ثبت تسک جدید"
         >

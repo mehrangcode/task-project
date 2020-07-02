@@ -21,6 +21,7 @@ const AddSubTaskForm = ({
         <Modal
         visible= {subtask.addSubTaskModal}
         onCancel={()=> dispatch(addSubTaskModal(false, null))}
+        loading={subtask.loading === "createSubTask"}
         onOk={onOk}
         title="ثبت ریزشاخه جدید"
         >

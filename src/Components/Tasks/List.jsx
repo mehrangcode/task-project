@@ -6,6 +6,7 @@ import AddSubTaskForm from '../SubTask/Create';
 import TaskCard from './Card';
 
 import ScrollContainer from 'react-indiana-drag-scroll'
+import Spinner from '../../Utils/Spinner';
 const TaskList = (props) => {
     const tasks = useSelector(state => state.tasks)
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ const TaskList = (props) => {
             <AddSubTaskForm />
             <ScrollContainer hideScrollbars={false} className="scroll-container">
                 <div className="taskList">
-
+                <Spinner loading={tasks.loading === "fetchTask"} />
 
                     {tasks.list && tasks.list.map(task => {
                         return <TaskCard key={"KEY" + task._id} task={task} />
