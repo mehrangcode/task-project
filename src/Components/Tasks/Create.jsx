@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Modal from '../Modals/Modal';
 import { useSelector, useDispatch } from "react-redux";
 import { createModal, createTask } from "../../Actions/Tasks/Actions";
@@ -7,6 +7,7 @@ import Select from '../../Utils/FormElements/Select/Select';
 const CreateTaskForm = ({
     getFormItem,
     onFormSubmit,
+    resetForm
 }) => {
 
     const tasks = useSelector(state => state.tasks)
@@ -17,6 +18,13 @@ const CreateTaskForm = ({
            dispatch(createTask(values.data))
         }
     }
+
+    useEffect(() => {
+            if(!tasks.createModalStatus){
+                resetForm()
+            }
+            
+    }, [tasks.createModalStatus])
     return (
         <Modal
         visible= {tasks.createModalStatus}

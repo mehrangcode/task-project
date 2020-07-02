@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Modal from '../Modals/Modal';
 import { useSelector, useDispatch } from "react-redux";
 import { addSubTaskModal, addSubTask } from "../../Actions/SubTasks/Actions";
@@ -7,6 +7,7 @@ import Select from '../../Utils/FormElements/Select/Select';
 const AddSubTaskForm = ({
     getFormItem,
     onFormSubmit,
+    resetForm
 }) => {
 
     const subtask = useSelector(state => state.subtask)
@@ -17,6 +18,13 @@ const AddSubTaskForm = ({
            dispatch(addSubTask(values.data))
         }
     }
+
+    useEffect(() => {
+            if(!subtask.addSubTaskModal){
+                resetForm()
+            }
+            
+    }, [subtask.addSubTaskModal])
     return (
         <Modal
         visible= {subtask.addSubTaskModal}
