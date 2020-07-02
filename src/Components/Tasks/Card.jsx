@@ -10,6 +10,7 @@ const TaskCard = ({ task }) => {
 
     const [targetSubTask, setTargetSubTask] = useState()
     const subtaskLoading = useSelector(state => state.subtask.loading)
+    const tasksData = useSelector(state => state.tasks)
     const dispatch = useDispatch()
     const taskstatusChangeHandler = (status) => {
         const updatedTask = JSON.parse(JSON.stringify(task))
@@ -31,6 +32,7 @@ const TaskCard = ({ task }) => {
                onClick={() => dispatch(addSubTaskModal(true, task))}
                className="addSubTaskBtn"> + </button> </Access>
                 <StatusBox 
+                loading = {tasksData.targetTask === task._id && tasksData.loading === "changeTaskStatus"}
                 statusChange={(value) => taskstatusChangeHandler(value)}
                 currentStatus={task.status} 
                 accessRole="admin" />

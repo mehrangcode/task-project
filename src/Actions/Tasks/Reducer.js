@@ -4,6 +4,7 @@ const unloadedState = {
     list: [],
     loading: "",
     createModalStatus: false,
+    targetTask: null
 };
 
 export const TasksReducer = (
@@ -57,19 +58,22 @@ export const TasksReducer = (
         case TaksActionTypes.ChangeTaskStatus: {
             return {
                 ...state,
-                loading: "changeTaskStatus"
+                loading: "changeTaskStatus",
+                targetTask: action.data._id
             }
         }
         case TaksActionTypes.ChangeTaskStatusSuccess: {
             return {
                 ...state,
-                loading: ""
+                loading: "",
+                targetTask: null
             }
         }
         case TaksActionTypes.ChangeTaskStatusFaild: {
             return {
                 ...state,
-                loading: ""
+                loading: "",
+                targetTask: null
             }
         }
     }

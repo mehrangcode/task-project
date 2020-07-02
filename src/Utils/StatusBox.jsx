@@ -1,17 +1,23 @@
 import React from 'react';
 import Access from './Access';
-import listIcon from "../assets/icon.svg"
+import listIcon from "../assets/icon.svg";
+import loadingIcon from "../assets/loading.svg";
 
 const StatusBox = ({
     currentStatus,
     accessRole,
-    statusChange
+    statusChange,
+    loading
 }) => {
 
     return (
         <span className="status"> 
             <Access role={accessRole}>
-                <img className="icon" src={listIcon} alt=""/>
+                {loading ? (
+                    <img className="icon" src={loadingIcon} alt=""/>
+                ) : (
+                    <img className="icon" src={listIcon} alt=""/>
+                )}
                 <div className="stausHandler">
                     <p 
                     onClick={() => {statusChange("برای انجام")}}

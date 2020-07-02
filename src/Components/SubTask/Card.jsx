@@ -6,9 +6,9 @@ const SubTaskCard = ({subtask, changeStatus, loading}) => {
 
     return (
         <div className="subtask">
-            <Spinner loading={loading} msg="در حال انجام عملیات" />
             <div className="subTaskactionBar">
             <StatusBox 
+                loading={loading}
                 statusChange={(value) => changeStatus(value)}
                 currentStatus={subtask.status} 
                 accessRole="employee" />
