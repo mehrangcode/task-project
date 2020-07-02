@@ -2,6 +2,8 @@ import React from 'react';
 import Access from './Access';
 import listIcon from "../assets/icon.svg";
 import loadingIcon from "../assets/loading.svg";
+import MenuIcon from './menuIcon';
+import Spinner from './Spinner';
 
 const StatusBox = ({
     currentStatus,
@@ -14,9 +16,9 @@ const StatusBox = ({
         <span className="status"> 
             <Access role={accessRole}>
                 {loading ? (
-                    <img className="icon" src={loadingIcon} alt=""/>
+                    <Spinner icon={true} loading={loading} />
                 ) : (
-                    <img className="icon" src={listIcon} alt=""/>
+                    <MenuIcon />
                 )}
                 <div className="stausHandler">
                     <p 

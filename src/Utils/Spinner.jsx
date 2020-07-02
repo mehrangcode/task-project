@@ -1,6 +1,6 @@
 import React from 'react';
-import loader from "../assets/loading.svg"
-import loaderIcon from "../assets/loaderIcon.svg"
+// import loader from "../assets/loading.svg"
+// import loaderIcon from "../assets/loaderIcon.svg"
 const Spinner = ({
     loading,
     msg,
@@ -10,7 +10,11 @@ const Spinner = ({
     
     if(icon) {
         if(loading) {
-            return ( <span className="loader"> <img className="spinnerIcon" src={loaderIcon} alt="بارگذاری"/>  </span> )
+            return ( <div class="spIcon">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div> )
         }
         return (
             <span> {text} </span>
@@ -18,7 +22,7 @@ const Spinner = ({
     }
     if(loading){
         return <div className="spinner">
-            <img src={loader} alt="بارگذاری"/>
+            <div className="loader"> {msg} </div>
             <p>
                 {msg}
             </p>
