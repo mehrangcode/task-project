@@ -27,6 +27,8 @@ const Modal = ({
                 setShowModal(false)
             }, 250);
         }
+        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [visible])
     if(!showModal) {
         return null

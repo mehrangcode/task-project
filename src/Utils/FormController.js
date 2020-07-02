@@ -1,24 +1,4 @@
 import * as React from 'react';
-// interface IFormItem {
-//     name: string;
-//     initialvalue?: string | number;
-//     rules?: IRules;
-//     label?: string;
-// }
-// type IState = {
-//     data: { [key: string]: string };
-//     err: any | null;
-//     rules: { [key: string]: IRules }
-// };
-
-
-// export type IFormProps = {
-//     getFormItem: (props: IFormItem, comp: Element | React.ComponentType | JSX.Element) => Element;
-//     getFormValues?: () => object;
-//     resetForm?: () => void;
-//     onFormSubmit: () => {data: {[key: string]: string}, err: {[key: string]: string}}
-// };
-
 
 
 
@@ -46,15 +26,6 @@ export const FormCreator = (Component) =>
                     isValid = value.toString().trim() !== ""
                     if (!isValid) {
                         msg = rule.msg;
-                    }
-                    err[name] = { msg, isValid }
-                }
-
-                if(rule.emaliValidate && isValid){
-                    const emailRegexValidation = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-                    isValid = emailRegexValidation.test(value)
-                    if (!isValid) {
-                        msg = rule.msg
                     }
                     err[name] = { msg, isValid }
                 }

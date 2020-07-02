@@ -282,7 +282,7 @@ class Select extends React.Component {
                         {this.state.displayValue}
                     </div>
                     <div className="selectBtn">
-                        <img className="icon" src={arrowIcon} />
+                        <img className="icon" src={arrowIcon} alt=" " />
                     </div>
                 </div>
                 <div ref={this.optionContainer} tabIndex={-1} style={this.props.position === "bottom" ? {bottom: "100%"} : { top: "100%"}}

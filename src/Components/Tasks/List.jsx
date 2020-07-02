@@ -13,6 +13,7 @@ const TaskList = (props) => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchList())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 

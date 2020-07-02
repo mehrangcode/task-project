@@ -24,6 +24,7 @@ const CreateTaskForm = ({
                 resetForm()
             }
             
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [tasks.createModalStatus])
     return (
         <Modal

@@ -24,6 +24,7 @@ const AddSubTaskForm = ({
                 resetForm()
             }
             
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [subtask.addSubTaskModal])
     return (
         <Modal
