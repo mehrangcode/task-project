@@ -2,6 +2,7 @@ import * as React from 'react';
 import Option from "./Option";
 import COption from "./COption";
 import { urlGeneral } from "../../../GeneralConst";
+import arrowIcon from "../../../assets/arrow.svg"
 
 class Select extends React.Component {
      static Option = Option;
@@ -281,7 +282,7 @@ class Select extends React.Component {
                         {this.state.displayValue}
                     </div>
                     <div className="selectBtn">
-                        \/
+                        <img className="icon" src={arrowIcon} />
                     </div>
                 </div>
                 <div ref={this.optionContainer} tabIndex={-1} style={this.props.position === "bottom" ? {bottom: "100%"} : { top: "100%"}}
