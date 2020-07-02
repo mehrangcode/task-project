@@ -45,6 +45,20 @@
 	border: none;
 }
 
+.noTask {
+	margin: 50px auto;
+	border: 2px solid gold;
+	padding: 20px 0;
+	width: 350px;
+	text-align: center;
+	border-radius: 15px;
+	box-shadow: 0 0 8px 3px #aaa;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 130px;
+}
 
 .nosubTask {
 	text-align: center;
